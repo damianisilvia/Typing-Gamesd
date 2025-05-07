@@ -96,3 +96,21 @@ input {
     padding: 8px 16px;
     margin-bottom: 24px;
 }
+/*aggiungo classe per bottone Inizia*/
+input {
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+}
+#start-btn {
+    margin: 16px 0;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+}
+
+#start-btn:hover {
+    background-color: #218838;
+}

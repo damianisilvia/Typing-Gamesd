@@ -10,6 +10,11 @@ const difficultySelect = document.getElementById("difficulty");
 /*aggiungo variabile per pulsante Inizia*/
 const startButton = document.getElementById("start-btn");
 
+//aggiungo il localStorage per mantenere la scelta del livello
+difficultySelect.addEventListener("change", (e) => {
+    difficulty = e.target.value;
+    localStorage.setItem("difficulty", difficulty); // Salva per mantenere scelta
+});
 const words = [
     "ciao",
     "cane",
@@ -85,3 +90,15 @@ text.addEventListener("input", (e) => {
 
 addWordToDOM();
 text.focus();
+
+//cambio start button l'utente non può scrivere finchè non clicca Inizia
+startButton.addEventListener("click", () => {
+    scoreValue = 0;
+    timeValue = 10;
+    score.innerText = scoreValue;
+    time.innerText = timeValue + "s";
+    message.innerText = "";
+    addWordToDOM();
+    text.disabled = false;  // ✅ Riattiva input
+    text.focus();
+});
