@@ -7,6 +7,8 @@ const settingsButton = document.getElementById("settings-btn");
 const settingsDiv = document.getElementById("settings-div");
 const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
+/*aggiungo variabile per pulsante Inizia*/
+const startButton = document.getElementById("start-btn");
 
 const words = [
     "ciao",
