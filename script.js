@@ -47,12 +47,21 @@ let difficulty = "easy";
 
 const timeInterval = setInterval(updateTime, 1000);
 
-function getRandomWord() {
-    return words[Math.floor(Math.random() * words.length)];
+//modifico funzione per chiamare parole tramite api 
+async function getRandomWord() {
+    try {
+        const res = await fetch("https://random-word-api.herokuapp.com/word?number=1");
+        const data = await res.json();
+        return data[0];
+    } catch (error) {
+        console.error("Errore nel recuperare la parola:", error);
+        return "errore"; // fallback se c'è un problema
+    }
 }
 
-function addWordToDOM() {
-    randomWord = getRandomWord();
+//modifica per aspettare la parola
+async function addWordToDOM() {
+    randomWord = await getRandomWord();
     word.innerText = randomWord;
 }
 
