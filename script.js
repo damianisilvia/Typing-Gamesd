@@ -9,6 +9,8 @@ const settingsForm = document.getElementById("settings-form");
 const difficultySelect = document.getElementById("difficulty");
 /*aggiungo variabile per pulsante Inizia*/
 const startButton = document.getElementById("start-btn");
+text.disabled = true; // Blocca input finché non si clicca Inizia
+
 
 //aggiungo il localStorage per mantenere la scelta del livello
 difficultySelect.addEventListener("change", (e) => {
@@ -68,6 +70,7 @@ function updateTime() {
     }
 }
 
+//aggiungo if con difficulty prima di updateTime()
 text.addEventListener("input", (e) => {
     const insertedText = e.target.value;
     if (insertedText === randomWord) {
@@ -91,7 +94,7 @@ text.addEventListener("input", (e) => {
 addWordToDOM();
 text.focus();
 
-//cambio start button l'utente non può scrivere finchè non clicca Inizia
+//cambio start button l'utente non può scriver finche non clicca Inizia
 startButton.addEventListener("click", () => {
     scoreValue = 0;
     timeValue = 10;
@@ -102,3 +105,11 @@ startButton.addEventListener("click", () => {
     text.disabled = false;  // ✅ Riattiva input
     text.focus();
 });
+function gameOver() {
+    message.innerHTML = `
+        <h1>Tempo scaduto!</h1>
+        <p>Il tuo punteggio è ${scoreValue}</p>
+        <button onclick="location.reload()">Rigioca</button>
+    `;
+    text.disabled = true;
+}
