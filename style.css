@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: none;
+}
+
+button:hover {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+select {
+    font-size: 16px;
+    padding: 8px;
+    appearance: none;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+select:focus {
+    outline: 0;
+}
+
+#settings-btn {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+}
+
+#settings-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+#settings-div.hide {
+    transform: translateY(-100%);
+}
+
+.container {
+    text-align: center;
+    width: 500px;
+    max-width: 90vh;
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+p {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+h2 {
+    margin-bottom: 24px;
+}
+
+input {
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+}
